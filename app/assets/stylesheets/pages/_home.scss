@@ -1,1 +1,21 @@
 // Specific CSS for your home-page
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.containers {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+
+section {
+  scroll-snap-align: center;
+}

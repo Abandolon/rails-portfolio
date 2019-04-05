@@ -1,0 +1,17 @@
+.skills {
+  color: white;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 30px;
+  ul {
+    list-style: none;
+    border: 1px solid darkred;
+    padding: 5px;
+    border-radius: 10px;
+    background: darkred;
+    font-size: xx-large;
+    width: 200px;
+  }
+}
