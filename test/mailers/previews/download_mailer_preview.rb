@@ -1,10 +1,9 @@
+# Preview all emails at http://localhost:3000/rails/mailers/download_mailer
 class DownloadMailerPreview < ActionMailer::Preview
 
-  def form_response
-    @user = Download.last
-
-    mail to: @user.email, bcc: "anthony@bandolon.me", subject: "Anthony Bandolon's CV"
-
+  # Preview this email at http://localhost:3000/rails/mailers/download_mailer/welcome
+  def welcome
+    DownloadMailer.welcome
   end
 
 end
