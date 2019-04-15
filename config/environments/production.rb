@@ -56,6 +56,11 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 
+  # Configuration required for Postmark Gem email sending
+  config.action_mailer.delivery_method     = :postmark
+  config.action_mailer.postmark_settings   = { api_key: ENV['POSTMARK_API_KEY'] }
+  config.action_mailer.default_url_options = { host: "anthony.bandolon.me" }
+
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
