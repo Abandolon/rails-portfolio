@@ -128,13 +128,12 @@
   </section>
   <section id="contact">
     <div class="banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url('https://res.cloudinary.com/abandolon/image/upload/o_75,c_scale,q_100,w_1500/v1554183913/Japan-Kyoto-2017-101.jpg')";>
-    <%= simple_form_for @download do |f| %>
-      <%= f.input :name %>
-      <%= f.input :email %>
-      <%= f.input :company %>
-      <%= f.submit "Get My CV" %>
-    <% end %>
-
+      <%= simple_form_for @download do |f| %>
+        <%= f.input :name %>
+        <%= f.input :email %>
+        <%= f.input :company %>
+        <%= f.submit "Get My CV" %>
+      <% end %>
     </div>
   </section>
 </div>
