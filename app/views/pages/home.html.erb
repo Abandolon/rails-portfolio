@@ -59,36 +59,56 @@
           <% if index == 0 %>
           <div class="carousel-item active">
             <%= link_to project.url, target: "blank" do %>
-            <div class="card-trip transparent-card">
-              <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url(<%= project.picture %>)">
-                <div class="card-info-column">
-                  <div style="width: 100% !important;">
-                    <div id="project-desc-col">
-                      <h2 class="card-text project-name"><%= project.name %></h2><br>
-                      <p id="project-desc-card" class="card-text project-name"><%= project.description %></p><br>
+              <div class="card-trip transparent-card">
+                <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url(<%= project.picture %>)">
+                  <div class="card-info-column">
+                    <div style="width: 100% !important;">
+                      <div id="project-desc-col">
+                        <h2 class="card-text project-name"><%= project.name %></h2><br>
+                        <p id="project-desc-card" class="card-text project-name"><%= project.description %></p>
+                        <div class="list-inline">
+                          <% project.technologies.each do |tech| %>
+                            <div class="list-inline-item">
+                              <div class="icons">
+                                <img src=<%= tech.icon %> alt= <%= tech.name %> class = "icon">
+                                <%= tech.name %>
+                              </div>
+                            </div>
+                          <% end %>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
             <% end %>
           </div>
           <% else %>
           <!-- Continues iteration through rest of Project Objects -->
           <div class="carousel-item">
             <%= link_to project.url, target: "blank" do %>
-            <div class="card-trip transparent-card">
-              <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url(<%= project.picture %>)">
-                <div class="card-info-column">
-                  <div style="width: 100% !important;">
-                    <div id="project-desc-col">
-                      <h2 class="card-text project-name"><%= project.name %></h2><br>
-                      <p id="project-desc-card" class="card-text project-name"><%= project.description %></p><br>
+              <div class="card-trip transparent-card">
+                <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url(<%= project.picture %>)">
+                  <div class="card-info-column">
+                    <div style="width: 100% !important;">
+                      <div id="project-desc-col">
+                        <h2 class="card-text project-name"><%= project.name %></h2><br>
+                        <p id="project-desc-card" class="card-text project-name"><%= project.description %></p>
+                        <div class="list-inline">
+                          <% project.technologies.each do |tech| %>
+                            <div class="list-inline-item">
+                              <div class="icons">
+                                <img src=<%= tech.icon %> alt= <%= tech.name %> class = "icon">
+                                <%= tech.name %>
+                              </div>
+                            </div>
+                          <% end %>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
             <% end %>
           </div>
           <!-- code for carsousel controlls -->
