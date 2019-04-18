@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_18_110246) do
+ActiveRecord::Schema.define(version: 2019_04_18_125539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2019_04_18_110246) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "project_teches", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "technology_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_teches_on_project_id"
+    t.index ["technology_id"], name: "index_project_teches_on_technology_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.string "url"
@@ -30,8 +39,6 @@ ActiveRecord::Schema.define(version: 2019_04_18_110246) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture"
-    t.bigint "technology_id"
-    t.index ["technology_id"], name: "index_projects_on_technology_id"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -48,5 +55,6 @@ ActiveRecord::Schema.define(version: 2019_04_18_110246) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "projects", "technologies"
+  add_foreign_key "project_teches", "projects"
+  add_foreign_key "project_teches", "technologies"
 end
