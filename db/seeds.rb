@@ -5,6 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Resetting Technology Stack"
+Technology.destroy_all
+puts "Finished Resetting Technology Stack"
+
+puts "Resetting Skills"
+Skill.destroy_all
+puts "Finished Resetting Skills"
 
 puts "Creating Technology Stack"
 
@@ -23,3 +30,23 @@ tech_icons = {
 tech_names.each do |tech|
   Technology.create(name: tech, icon: tech_icons[tech])
 end
+
+puts "Created #{Technology.count} Tech objects"
+
+puts "Creating Skills"
+
+skills = ["Ruby", "HTML 5", "CSS 3", "Project Management", "Team Management", "Git Flow Management"]
+skills_icon = {
+  "Ruby" => "far fa-gem",
+  "HTML 5" => "fab fa-html5",
+  "CSS 3" => "fab fa-css3-alt",
+  "Project Management" => "far fa-map",
+  "Team Management" => "fas fa-users",
+  "Git Flow Management" => "fab fa-github-square"
+}
+
+skills.each do |skill|
+  Skill.create(name: skill, icon: skills_icon[skill])
+end
+
+puts "Created #{Skill.count} Skills"
