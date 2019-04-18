@@ -1,3 +1,4 @@
 class Project < ApplicationRecord
-  belongs_to :technology
+  has_many :project_tech
+  has_many :technologies, through: :project_tech
 end
