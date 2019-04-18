@@ -1,0 +1,16 @@
+.icon {
+  height: 30px;
+  color: white;
+  margin-left: 5px;
+  background-color: rgba(245, 245, 245, .8)
+}
+
+
+.icons {
+  p {
+    visibility: hidden;
+  }
+  :hover {
+    visibility: visible;
+  }
+}
